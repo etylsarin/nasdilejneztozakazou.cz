@@ -13,17 +13,20 @@ export const PageLayout = ({ children }) => {
         siteMetadata {
           title
           description
+          siteUrl
         }
       }
     }
   `)
   const TITLE = `${siteMetadata.title} | Neubližujte svým dětem a budoucím generacím!`
   const DESC = siteMetadata.description
+  const SITE_URL = siteMetadata.siteUrl.replace(/\/$/, "")
+  const OG_IMAGE = `${SITE_URL}/og-image.jpg`
 
   return (
     <>
       <Helmet
-        htmlAttributes={{ lang: "en" }}
+        htmlAttributes={{ lang: "cs" }}
         title={TITLE}
         meta={[
           {
@@ -36,7 +39,15 @@ export const PageLayout = ({ children }) => {
           },
           {
             property: `og:image`,
-            content: `../images/sorry-jako.jpg`,
+            content: OG_IMAGE,
+          },
+          {
+            property: `og:url`,
+            content: `${SITE_URL}/`,
+          },
+          {
+            property: `og:locale`,
+            content: `cs_CZ`,
           },
           {
             property: `og:description`,
@@ -49,6 +60,10 @@ export const PageLayout = ({ children }) => {
           {
             name: `twitter:card`,
             content: `summary`,
+          },
+          {
+            name: `twitter:image`,
+            content: OG_IMAGE,
           },
           {
             name: `twitter:title`,

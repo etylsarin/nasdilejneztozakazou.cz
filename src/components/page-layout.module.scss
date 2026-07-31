@@ -46,6 +46,8 @@ h1 {
   );
   background-repeat: no-repeat;
   padding: 48px 0;
+  // The header's rotate(1deg) sticks out a couple of pixels either side.
+  overflow-x: clip;
 }
 
 .header {

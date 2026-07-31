@@ -84,6 +84,15 @@
     margin-bottom: 48px;
     flex-direction: column;
     justify-content: center;
+
+    // The fixed 400px above overflows viewports narrower than ~464px.
+    :global(.gatsby-resp-image-wrapper),
+    img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      aspect-ratio: 1;
+    }
   }
 
   .text {

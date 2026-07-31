@@ -1,54 +1,41 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
-  </a>
-</p>
-<h1 align="center">
-  Gatsby minimal starter
-</h1>
+# nasdilejneztozakazou.cz
 
-## 🚀 Quick start
+Statický web shrnující **doložitelná fakta o působení Andreje Babiše v čele české vlády** — obě premiérská období (2017–2021 a od prosince 2025) a jeho největší kauzy.
 
-1.  **Create a Gatsby site.**
+Web běží na [Gatsby](https://www.gatsbyjs.com/) a je nasazený na GitHub Pages (viz [CNAME](./CNAME)).
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+## Pravidla pro obsah
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+1. **Každé faktické tvrzení musí mít odkaz na zdroj.** Nic si nevymýšlíme.
+2. Preferované zdroje: soudy, státní úřady (ČSÚ, MF ČR, PSP ČR, volby.gov.cz), Evropská komise, Transparency International a redakce s právní odpovědností (ČT24, iROZHLAS, ČTK / České noviny, Seznam Zprávy, Deník N).
+3. Pokud se právní stav kauzy změní, **kapitola se aktualizuje** — včetně případů, kdy nový vývoj vyznívá ve prospěch popisované osoby.
+4. Odkazy je potřeba občas prověřit; některé zdroje mizí.
 
-2.  **Start developing.**
+## Struktura
 
-    Navigate into your new site’s directory and start it up.
+| Cesta                                              | Co obsahuje                                                                                                                     |
+| -------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| [src/sections/](./src/sections/)                   | Jednotlivé kapitoly jako MDX (`chapter-01.mdx` … `chapter-13.mdx`)                                                              |
+| [src/sections/index.tsx](./src/sections/index.tsx) | Pořadí kapitol na stránce — **novou kapitolu je nutné přidat sem**                                                              |
+| [src/components/](./src/components/)               | Layout stránky a sekcí + SCSS moduly                                                                                            |
+| [src/pages/](./src/pages/)                         | Úvodní stránka a 404                                                                                                            |
+| [src/images/](./src/images/)                       | Obrázky ke kapitolám (400×400, černobílé)                                                                                       |
+| [static/](./static/)                               | Soubory servírované beze změny, např. `og-image.jpg`                                                                            |
+| [gatsby-shared.tsx](./gatsby-shared.tsx)           | `wrapPageElement` — reexportovaný z `gatsby-browser` i `gatsby-ssr`, aby se layout a `<head>` tagy dostaly i do statického HTML |
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+Kapitoly se střídavě zarovnávají vlevo/vpravo podle pořadí, takže **je lepší nedávat stejný obrázek do dvou sousedních kapitol**.
 
-3.  **Open the code and start customizing!**
+## Vývoj
 
-    Your site is now running at http://localhost:8000!
+```shell
+yarn install
+yarn develop   # http://localhost:8000
+yarn build     # produkční build do public/
+yarn serve     # náhled produkčního buildu
+yarn deploy    # build + publikace na gh-pages
+yarn format    # prettier
+```
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+## Licence
 
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+Viz [LICENSE](./LICENSE).
