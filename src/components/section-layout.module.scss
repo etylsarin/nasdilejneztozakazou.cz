@@ -35,8 +35,10 @@
     box-shadow: 12px 12px #000 !important;
   }
 
-  h1 {
+  h2 {
     font-size: 32px;
+    // Keeps the spacing these headings had while they were still <h1>.
+    margin-bottom: 0.67em;
   }
 
   p {

@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Build artifact of gatsby-plugin-offline: an empty copy of the page shell.
+Disallow: /offline-plugin-app-shell-fallback/
+
+Sitemap: https://www.nasdilejneztozakazou.cz/sitemap-index.xml
