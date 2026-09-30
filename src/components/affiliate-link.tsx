@@ -18,12 +18,13 @@ type AffiliateLinkProps = {
   book: Book
   className?: string
   children: React.ReactNode
-}
+} & Omit<React.ComponentProps<"a">, "href" | "rel" | "target">
 
 export const AffiliateLink = ({
   book,
   className,
   children,
+  ...rest
 }: AffiliateLinkProps) => {
   const sid = React.useContext(AffiliateSourceContext)
   return (
@@ -33,6 +34,7 @@ export const AffiliateLink = ({
       target="_blank"
       className={className}
       onClick={() => trackAffiliateClick(book.id)}
+      {...rest}
     >
       {children}
     </a>
