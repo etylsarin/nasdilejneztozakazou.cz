@@ -1,0 +1,44 @@
+.groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 8px 40px;
+  margin: 24px 0 8px;
+}
+
+// Nested under .groups to outrank .prose list styles on the about page.
+.groups .group {
+  border-top: 6px solid var(--ink);
+  padding-top: 12px;
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 14px;
+    line-height: 1.4;
+  }
+
+  a {
+    font-family: var(--narrow);
+    font-weight: 700;
+    font-size: 19px;
+  }
+
+  span {
+    display: block;
+    font-size: 15px;
+    color: var(--muted);
+  }
+}
+
+// Plain class selector so the heading size doesn't depend on h2/h3.
+.title {
+  font-size: 15px !important;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 12px !important;
+}
