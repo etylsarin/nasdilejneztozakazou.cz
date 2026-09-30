@@ -90,7 +90,7 @@ const IndexPage = ({ data }) => {
           Namísto marketingových lží z předvolební publikace však na tomto webu najdete chladnou realitu:
           všechny kauzy oligarchy Babiše od členství v KSČ a evidence u StB přes kontroverzní ovládnutí Petrimexu,
           vznik Agrofertu a Čapí hnízdo až po opětovný střet zájmů v nové vládě, v pořadí, v jakém se staly.
-          <strong>U každého tvrzení je odkaz na zdroj</strong>, ať si vše můžete
+          <br /><strong>U každého tvrzení je odkaz na zdroj</strong>, ať si vše můžete
           ověřit sami.
         </p>
         <p className={styles.stats}>
