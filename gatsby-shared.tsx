@@ -1,8 +1,9 @@
 import React from "react"
-import { PageLayout } from "./src/components/page-layout"
+import { Layout } from "./src/components/layout"
 
-// Shared by gatsby-browser and gatsby-ssr so the layout (and the <head> tags it
-// renders via react-helmet) ends up in the static HTML, not just after hydration.
+// Shared by gatsby-browser and gatsby-ssr so the header, navigation and footer
+// are part of the static HTML, not just added after hydration. Per-page <head>
+// tags live in each page's `Head` export (Gatsby Head API).
 export const wrapPageElement = ({ element, props }) => {
-  return <PageLayout {...props}>{element}</PageLayout>
+  return <Layout location={props.location}>{element}</Layout>
 }
