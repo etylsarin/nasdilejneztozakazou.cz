@@ -70,7 +70,7 @@ Text s [odkazem na zdroj](https://…) a odkazem na knihu <BookLink id="boss-bab
 
 ### Obrázky
 
-Každá kauza má vlastní ilustraci: čtverec **400×400 px, černobílý** (web ho zobrazuje s černým stínem, na úvodní stránce jako náhled v časové ose). Nové fotky bereme z [Wikimedia Commons](https://commons.wikimedia.org/) jen s licencí CC0, volné dílo, CC BY nebo CC BY-SA a vyplníme `imageCredit`, `imageLicense`, `imageLicenseUrl` a `imageSource` – pod obrázkem se z nich složí povinný popisek autora a licence. Úprava na čtverec a do černobílé:
+Každá kauza má vlastní ilustraci: čtverec **400×400 px, černobílý** (web ho zobrazuje s černým stínem, na úvodní stránce jako náhled v časové ose). Nové fotky bereme z [Wikimedia Commons](https://commons.wikimedia.org/) jen s licencí CC0, volné dílo, CC BY nebo CC BY-SA a vyplníme `imageCredit`, `imageLicense`, `imageLicenseUrl` a `imageSource` – pod obrázkem se z nich složí povinný popisek autora a licence. Výjimkou je produktová fotka z webu výrobce (`imageCredit` + `imageSource` bez licence), kterou používáme jako ilustraci výrobku, o kterém kauza je. Úprava na čtverec a do černobílé:
 
 ```shell
 node -e 'require("sharp")("vstup.jpg").resize(400,400,{fit:"cover",position:"attention"}).grayscale().jpeg({quality:82,mozjpeg:true}).toFile("src/images/nazev.jpg")'

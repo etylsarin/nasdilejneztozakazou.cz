@@ -12,6 +12,12 @@ import { useSiteMetadata } from "../hooks/use-site-metadata"
 import { formatDate } from "../utils/format"
 import * as styles from "./kauza.module.scss"
 
+// "https://www.penam.cz/…" → "penam.cz"; Commons gets its proper name.
+const sourceLabel = (url: string) => {
+  const host = new URL(url).hostname.replace(/^www\./, "")
+  return host.endsWith("wikimedia.org") ? "Wikimedia Commons" : host
+}
+
 // Commons licences (CC BY, CC BY-SA) require the author, a link to the
 // source and to the licence, and a note that the picture was modified.
 const ImageCredit = ({ frontmatter }) => {
@@ -24,7 +30,7 @@ const ImageCredit = ({ frontmatter }) => {
         <>
           {" / "}
           <a href={imageSource} target="_blank" rel="noopener">
-            Wikimedia Commons
+            {sourceLabel(imageSource)}
           </a>
         </>
       )}
