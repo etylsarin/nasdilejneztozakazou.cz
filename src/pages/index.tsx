@@ -83,6 +83,9 @@ const IndexPage = ({ data }) => {
             href="https://www.e15.cz/volby/volby-do-snemovny/moje-era-byla-nejuspesnejsi-chlubi-se-babis-ve-volebni-publikaci-kandiduje-pry-naposled-1382162"
             target="_blank"
             rel="noopener"
+            // Same text as the site-name link to the homepage; the label
+            // tells screen readers this one goes to an article.
+            aria-label="Sdílejte, než to zakážou! (článek E15 o Babišově volební publikaci)"
           >
             <cite>Sdílejte, než to zakážou!</cite>
           </a>

@@ -46,7 +46,12 @@ export const BookCard = ({
 
   return (
     <article className={styles.card} id={book.id}>
-      <AffiliateLink book={book} className={styles.coverLink}>
+      <AffiliateLink
+        book={book}
+        className={styles.coverLink}
+        aria-hidden="true"
+        tabIndex={-1}
+      >
         <Cover book={book} />
       </AffiliateLink>
       <div className={styles.body}>

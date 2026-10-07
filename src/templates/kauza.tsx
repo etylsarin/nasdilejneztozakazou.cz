@@ -110,6 +110,9 @@ const CaseTemplate = ({ data, pageContext, children }) => {
                   image={image}
                   alt={frontmatter.imageAlt ?? ""}
                   className={styles.image}
+                  // The aside is a 300px column above the 900px breakpoint
+                  // and the image caps at 400px below it.
+                  sizes="(min-width: 901px) 300px, (min-width: 400px) 400px, 100vw"
                 />
                 {frontmatter.imageCredit && (
                   <ImageCredit frontmatter={frontmatter} />
@@ -279,7 +282,13 @@ export const query = graphql`
         updated(formatString: "YYYY-MM-DD")
         image {
           childImageSharp {
-            gatsbyImageData(width: 400, height: 400, placeholder: BLURRED)
+            gatsbyImageData(
+              width: 400
+              height: 400
+              placeholder: BLURRED
+              formats: [AUTO, AVIF, WEBP]
+              outputPixelDensities: [0.75, 1, 1.5, 2]
+            )
             original {
               src
               width
